@@ -10,6 +10,17 @@
 
 </script>
 <body>
+    <div id="app">
+        {{text}}
+    </div>
     
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                text: 'Hello, World'
+            }
+        })
+    </script>
 </body>
 </html>
