@@ -10,40 +10,18 @@
 <link rel="stylesheet" href="http://davidtkatz.com/public_css/vue.css">
 <body>
     <div id="app">
-        <ul>
-           <li v-for="colour in colours" v-if="colour.primary == false">{{colour.text}}</li> 
-        </ul>
+    <button class="vue-btn" v-on:click="reveal">Reveal a Secret Number</button>
     </div>
     <script>
         var app = new Vue({
             el: '#app',
             data: {
-                colours: [
-                    {
-                        text: 'red',
-                        primary: true
-                    },
-                    {
-                        text: 'green',
-                        primary: true
-                    },
-                    {
-                        text: 'yellow',
-                        primary: false
-                    },
-                    {
-                        text: 'blue',
-                        primary: true
-                    },
-                    {
-                        text: 'cyan',
-                        primary: false
-                    },
-                    {
-                        text: 'orange',
-                        primary: false
-                    }
-                ]
+                secretNumber: Math.floor(Math.random() * 100) + 1
+            },
+            methods: {
+                reveal(){
+                    alert(`This is a secret number: ${this.secretNumber}`)
+                }
             }
         })
     </script>
