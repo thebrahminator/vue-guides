@@ -10,18 +10,34 @@
 <link rel="stylesheet" href="http://davidtkatz.com/public_css/vue.css">
 <body>
     <div id="app">
-    <button class="vue-btn" @click="reveal">Reveal a Secret Number</button>
+    <counter></counter>
     </div>
     <script>
+        var counter = Vue.component('counter',{
+            template: `
+            <div>
+                <div>Count: {{this.count}}</div>
+                <button class="vue-btn" @click="increment">Increment the value by 1</button>
+            </div>
+            `,
+            data(){
+                return {
+                    count: 0
+                }
+            },
+
+            methods: {
+                increment()
+                {
+                    this.count++
+                }
+            }
+            
+        })
         var app = new Vue({
             el: '#app',
-            data: {
-                secretNumber: Math.floor(Math.random() * 100) + 1
-            },
-            methods: {
-                reveal(){
-                    alert(`This is a secret number: ${this.secretNumber}`)
-                }
+            component: {
+                counter
             }
         })
     </script>
