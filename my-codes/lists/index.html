@@ -18,7 +18,32 @@
         var app = new Vue({
             el: '#app',
             data: {
-                colours: ["red", "green", "yellow", "blue", "cyan", "orange"]
+                colours: [
+                    {
+                        text: 'red',
+                        primary: true
+                    },
+                    {
+                        text: 'green',
+                        primary: true
+                    },
+                    {
+                        text: 'yellow',
+                        primary: false
+                    },
+                    {
+                        text: 'blue',
+                        primary: true
+                    },
+                    {
+                        text: 'cyan',
+                        primary: false
+                    },
+                    {
+                        text: 'orange',
+                        primary: false
+                    }
+                ]
             }
         })
     </script>
