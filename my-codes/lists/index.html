@@ -11,7 +11,7 @@
 <body>
     <div id="app">
         <ul>
-           <li v-for="colour in colours">{{colour}}</li> 
+           <li v-for="colour in colours" v-if="colour.primary == false">{{colour.text}}</li> 
         </ul>
     </div>
     <script>
