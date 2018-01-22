@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="http://davidtkatz.com/public_css/vue.css">
 <body>
     <div id="app">
-    <counter></counter>
+    <counter v-bind:add-num="1"></counter>
     </div>
     <script>
         var counter = Vue.component('counter',{
