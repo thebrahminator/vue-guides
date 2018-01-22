@@ -10,22 +10,16 @@
 <link rel="stylesheet" href="http://davidtkatz.com/public_css/vue.css">
 <body>
     <div id="app">
-        <span>Change the text</span>
-        <input v-model="text" placeholder="text..." type="text"/>
-        <div>
-            Lowercased: {{lowerText}}
-        </div>
+        
     </div>
     <script>
         var app = new Vue({
             el: '#app',
             data: {
-                text: ''
+
             },
-            computed:{
-                lowerText(){
-                    return this.text.toLowerCase()
-                }
+            created(){
+                alert(`The current time is ${Date.now().toLocaleString()}`)
             }
         })
     </script>
