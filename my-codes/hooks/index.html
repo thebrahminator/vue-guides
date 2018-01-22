@@ -10,7 +10,9 @@
 <link rel="stylesheet" href="http://davidtkatz.com/public_css/vue.css">
 <body>
     <div id="app">
-        
+        <div>
+            Hello World
+        </div>
     </div>
     <script>
         var app = new Vue({
@@ -18,8 +20,16 @@
             data: {
 
             },
+            methods:{
+                alertTime(){
+                    alert(`The current time is ${Date.now().toLocaleString()}`)
+                }
+            },
             created(){
-                alert(`The current time is ${Date.now().toLocaleString()}`)
+                this.alertTime()
+            },
+            mounted(){
+                this.alertTime()
             }
         })
     </script>
